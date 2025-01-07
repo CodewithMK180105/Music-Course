@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-import { ThemeProvider } from "@/components/theme-provider"
+import { ThemeWrapper } from "@/components/themeWrapper"; // Import the client-side wrapper
 
-const inter= Inter({subsets: ["latin"]});
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -21,19 +21,11 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/vercel.svg" sizes="any" />
       </head>
-      <body
-        className={`${inter.className}`}
-      >
-        <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            // disableTransitionOnChange
-          >
-
-        <Navbar />
-        {children}
-          </ThemeProvider>
+      <body className={`${inter.className}`}>
+        <ThemeWrapper>
+          <Navbar />
+          {children}
+        </ThemeWrapper>
       </body>
     </html>
   );
