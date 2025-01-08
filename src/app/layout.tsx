@@ -23,7 +23,9 @@ export default function RootLayout({
       </head>
       <body className={`${inter.className}`}>
         <ThemeWrapper>
-          <Navbar />
+          <div className="relative w-full flex items-center justify-center">
+            <Navbar />
+          </div>
           {children}
         </ThemeWrapper>
       </body>
