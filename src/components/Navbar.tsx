@@ -35,7 +35,7 @@ const Navbar = ({ className }: { className?: string }) => {
             item="Contact Us"
           ></MenuItem>
         </Link>
-        <ModeToggle />
+        {/* <ModeToggle /> */}
       </Menu>
     </div>
   );

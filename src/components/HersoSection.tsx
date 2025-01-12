@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import { Spotlight } from "./ui/Spotlight";
+import { Button } from "./ui/moving-border";
 // h-auto md:h-[40rem]
 
 const HersoSection = () => {
@@ -25,7 +26,11 @@ const HersoSection = () => {
           your skills, join us to unlock your true potential.
         </p>
         <div className="mt-4">
-          <Link href={"/courses"}>Explore courses</Link>
+          <Link href={"/courses"}>
+            <Button borderRadius="1.75rem">
+              Explore Courses
+            </Button>
+          </Link>
         </div>
       </div>
     </div>
