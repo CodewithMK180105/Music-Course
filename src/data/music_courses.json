@@ -4,11 +4,11 @@
         "id": 1,
         "title": "Guitar Fundamentals",
         "slug": "guitar-fundamentals",
-        "description": "Learn the basics of playing guitar with our comprehensive beginner's course.",
+        "description": "Learn the fundamental basics of playing guitar with our comprehensive beginner's course.",
         "price": 99.99,
         "instructor": "John Doe",
         "isFeatured": true,
-        "image": "/courses/guitar.jpg" 
+        "image": "https://res.cloudinary.com/dffoynel3/image/upload/v1736781919/Guitar_course_ost6es.png" 
       },
       {
         "id": 2,
@@ -28,7 +28,7 @@
         "price": 119.99,
         "instructor": "Emily Johnson",
         "isFeatured": true,
-        "image": "/courses/vocalist.jpg" 
+        "image": "https://res.cloudinary.com/dffoynel3/image/upload/v1736782803/vocal_course_tbptgz.png" 
       },
       {
         "id": 4,
@@ -58,7 +58,7 @@
         "price": 149.99,
         "instructor": "Alex Wilson",
         "isFeatured": true,
-        "image": "/courses/music-prod.jpg"
+        "image": "https://res.cloudinary.com/dffoynel3/image/upload/v1736783267/music_production_cnvwms.png"
       },
       {
         "id": 7,
@@ -78,7 +78,7 @@
         "price": 169.99,
         "instructor": "Luke Harris",
         "isFeatured": true,
-        "image": "/courses/music-prod.jpg"
+        "image": "https://res.cloudinary.com/dffoynel3/image/upload/v1736783387/electronic_music_production_irmf4c.png"
       },
       {
         "id": 9,
@@ -94,11 +94,11 @@
         "id": 10,
         "title": "Blues Guitar Techniques",
         "slug": "blues-guitar-techniques",
-        "description": "Discover the techniques of blues guitar to add soul and depth to your playing.",
+        "description": "Discover the essential techniques of blues guitar to add more soul and depth to your playing.",
         "price": 189.99,
         "instructor": "Ethan Moore",
         "isFeatured": true,
-        "image": "/courses/blues.jpg"
+        "image": "https://res.cloudinary.com/dffoynel3/image/upload/v1736783562/blue_guitar_b6fiax.png"
       }
     ]
   }

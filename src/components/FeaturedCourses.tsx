@@ -41,13 +41,15 @@ const FeaturedCourses = () => {
                                 test
                             </BackgroundGradient> */}
               <BackgroundGradient className="rounded-[22px] max-w-sm p-4 sm:p-10 bg-white dark:bg-zinc-900">
-                <Image
-                  src={course.image}
-                  alt="jordans"
-                  height="400"
-                  width="400"
-                  className="object-contain"
-                />
+                <div className="w-full h-52 overflow-hidden">
+                  <Image
+                    src={course.image}
+                    alt="jordans"
+                    height={400}
+                    width={400}
+                    className="object-cover"
+                  />
+                </div>
                 <p className="text-base sm:text-xl text-black mt-4 mb-2 dark:text-neutral-200">
                   {course.title}
                 </p>
@@ -55,12 +57,17 @@ const FeaturedCourses = () => {
                 <p className="text-sm text-neutral-600 dark:text-neutral-400">
                   {course.description}
                 </p>
-                <button className="rounded-full pl-4 pr-1 py-1 text-white flex items-center space-x-1 bg-black mt-4 text-xs font-bold dark:bg-zinc-800">
-                  <span>Buy now </span>
-                  <span className="bg-zinc-700 rounded-full text-[0.6rem] px-2 py-0 text-white">
-                    {course.price}
-                  </span>
-                </button>
+                <div className="flex justify-between items-center">
+                  <button className="flex items-center justify-between px-4 py-2 space-x-2 rounded-full bg-gradient-to-r from-purple-500 to-indigo-600 text-white dark:from-indigo-700 dark:to-purple-800 dark:hover:from-indigo-800 dark:hover:to-purple-900 hover:from-purple-600 hover:to-indigo-700 text-xs font-bold transition duration-300 ease-in-out mt-4 shadow-lg hover:shadow-xl">
+                    <span className="whitespace-nowrap">Buy Now</span>
+                    <span className="px-3 py-1 rounded-full bg-white text-indigo-600 dark:bg-gray-200 dark:text-indigo-700 text-[0.75rem] font-medium shadow-md">
+                      {course.price}
+                    </span>
+                  </button>
+                  <Link href={`/courses/${course.slug}`} className="test-[16px] mt-4" >
+                    Learn More
+                  </Link>
+                </div>
               </BackgroundGradient>
             </div>
           ))}
