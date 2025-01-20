@@ -1,21 +1,48 @@
 import type { Config } from "tailwindcss";
+import svgToDataUri from 'mini-svg-data-uri';
+
+import colors from "tailwindcss/colors";
+import flattenColorPalette from "tailwindcss/lib/util/flattenColorPalette";
+
+function addSvgPatterns({ matchUtilities, theme }: any) {
+  matchUtilities(
+    {
+      'bg-grid': (value: any) => ({
+        backgroundImage: `url("${svgToDataUri(
+          `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="${value}"><path d="M0 .5H31.5V32"/></svg>`
+        )}")`,
+      }),
+      'bg-grid-small': (value: any) => ({
+        backgroundImage: `url("${svgToDataUri(
+          `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="8" height="8" fill="none" stroke="${value}"><path d="M0 .5H31.5V32"/></svg>`
+        )}")`,
+      }),
+      'bg-dot': (value: any) => ({
+        backgroundImage: `url("${svgToDataUri(
+          `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16" fill="none"><circle fill="${value}" id="pattern-circle" cx="10" cy="10" r="1.6257413380501518"></circle></svg>`
+        )}")`,
+      }),
+    },
+    { values: flattenColorPalette(theme('backgroundColor')), type: 'color' }
+  );
+}
 
 // Custom implementation of flattenColorPalette
-function flattenColorPalette(colors: Record<string, any>): Record<string, string> {
-  const result: Record<string, string> = {};
+// function flattenColorPalette(colors: Record<string, any>): Record<string, string> {
+//   const result: Record<string, string> = {};
 
-  for (const [key, value] of Object.entries(colors)) {
-    if (typeof value === "object" && value !== null) {
-      for (const [subKey, subValue] of Object.entries(value)) {
-        result[`${key}-${subKey}`] = subValue as string;
-      }
-    } else {
-      result[key] = value as string;
-    }
-  }
+//   for (const [key, value] of Object.entries(colors)) {
+//     if (typeof value === "object" && value !== null) {
+//       for (const [subKey, subValue] of Object.entries(value)) {
+//         result[`${key}-${subKey}`] = subValue as string;
+//       }
+//     } else {
+//       result[key] = value as string;
+//     }
+//   }
 
-  return result;
-}
+//   return result;
+// }
 
 // Plugin to add each Tailwind color as a global CSS variable
 function addVariablesForColors({ addBase, theme }: any) {
@@ -40,6 +67,7 @@ export default {
     extend: {
       animation: {
         spotlight: "spotlight 2s ease .75s 1 forwards",
+        scroll: "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
       },
       keyframes: {
         spotlight: {
@@ -50,6 +78,11 @@ export default {
           "100%": {
             opacity: "1",
             transform: "translate(-50%,-40%) scale(1)",
+          },
+        },
+        scroll: {
+          to: {
+            transform: "translate(calc(-50% - 0.5rem))",
           },
         },
       },
@@ -102,5 +135,5 @@ export default {
       },
     },
   },
-  plugins: [addVariablesForColors],
+  plugins: [addVariablesForColors, addSvgPatterns],
 } satisfies Config;
