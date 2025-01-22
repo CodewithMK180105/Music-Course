@@ -18,7 +18,7 @@
         "price": 109.99,
         "instructor": "Jane Smith",
         "isFeatured": false,
-        "image": "/courses/piano.jpg" 
+        "image": "https://plus.unsplash.com/premium_photo-1682326302625-1e5b7826fb3c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHBpYW5vfGVufDB8fDB8fHww" 
       },
       {
         "id": 3,
@@ -38,7 +38,7 @@
         "price": 129.99,
         "instructor": "Mike Brown",
         "isFeatured": false,
-        "image": "/courses/drumming.jpg"
+        "image": "https://images.unsplash.com/photo-1526933893123-220ba506e809?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZHJ1bW1pbmd8ZW58MHx8MHx8fDA%3D"
       },
       {
         "id": 5,
@@ -48,7 +48,7 @@
         "price": 139.99,
         "instructor": "Chris Davis",
         "isFeatured": false,
-        "image": "/courses/jazz.jpg"
+        "image": "https://images.unsplash.com/photo-1511192336575-5a79af67a629?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8SmF6eiUyMEltcHJvdmlzYXRpb258ZW58MHx8MHx8fDA%3D"
       },
       {
         "id": 6,
@@ -68,7 +68,7 @@
         "price": 159.99,
         "instructor": "Samantha Miller",
         "isFeatured": false,
-        "image": "/courses/song-writing.jpg"
+        "image": "https://media.istockphoto.com/id/1129332739/photo/music-for-guitar-top-view-of-guitar-and-musical-notes-laying-on-the-wooden-floor.webp?a=1&b=1&s=612x612&w=0&k=20&c=zfCLFuCVN5tpAM6pbhTuDp7Dr1oYUV9SwN5KveBL_Yw="
       },
       {
         "id": 8,
@@ -88,7 +88,7 @@
         "price": 179.99,
         "instructor": "Grace Lee",
         "isFeatured": false,
-        "image": "/courses/classical-music.jpg"
+        "image": "https://plus.unsplash.com/premium_photo-1723618909795-f5ee30cf5697?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Q2xhc3NpY2FsJTIwTXVzaWMlMjBIaXN0b3J5fGVufDB8fDB8fHww"
       },
       {
         "id": 10,
