@@ -1,7 +1,5 @@
 import type { Config } from "tailwindcss";
 import svgToDataUri from 'mini-svg-data-uri';
-
-import colors from "tailwindcss/colors";
 import flattenColorPalette from "tailwindcss/lib/util/flattenColorPalette";
 
 function addSvgPatterns({ matchUtilities, theme }: any) {
@@ -27,24 +25,6 @@ function addSvgPatterns({ matchUtilities, theme }: any) {
   );
 }
 
-// Custom implementation of flattenColorPalette
-// function flattenColorPalette(colors: Record<string, any>): Record<string, string> {
-//   const result: Record<string, string> = {};
-
-//   for (const [key, value] of Object.entries(colors)) {
-//     if (typeof value === "object" && value !== null) {
-//       for (const [subKey, subValue] of Object.entries(value)) {
-//         result[`${key}-${subKey}`] = subValue as string;
-//       }
-//     } else {
-//       result[key] = value as string;
-//     }
-//   }
-
-//   return result;
-// }
-
-// Plugin to add each Tailwind color as a global CSS variable
 function addVariablesForColors({ addBase, theme }: any) {
   const allColors = flattenColorPalette(theme("colors"));
   const newVars = Object.fromEntries(
@@ -68,8 +48,17 @@ export default {
       animation: {
         spotlight: "spotlight 2s ease .75s 1 forwards",
         scroll: "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
+        "meteor-effect" : "meteor 5s linear infinite",
       },
       keyframes: {
+        meteor: {
+          "0%": { transform: "rotate(215deg) translateX(0)", opacity: "1" },
+          "70%": { opacity: "1" },
+          "100%": {
+            transform: "rotate(215deg) translateX(-500px)",
+            opacity: "0",
+          },
+        },
         spotlight: {
           "0%": {
             opacity: "0",

@@ -71,11 +71,13 @@ body {
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
-
+  /* Apply Tailwind utility classes to body */
   body {
     @apply bg-background text-foreground;
+  }
+
+  /* Apply border and other styles */
+  * {
+    @apply border-border;
   }
 }
