@@ -3,7 +3,14 @@ import Link from 'next/link'
 import React from 'react'
 import { HoverEffect } from './ui/card-hover-effect';
 
-const featuredWebinars = [
+interface Webinar {
+  title: string,
+  description: string,
+  slug: string,
+  isFeatured: boolean,
+}
+
+const featuredWebinars: Webinar[] = [
     {
       title: 'Understanding Music Theory',
       description:
@@ -49,7 +56,7 @@ const featuredWebinars = [
     },
   ];
 
-const UpcomingWebinars = () => {
+const UpcomingWebinars: React.FC = () => {
   return (
     <div className='p-12 bg-gray-900'>
       <div className='max-w-7xl mx-auto px-4 sm:px-6'>

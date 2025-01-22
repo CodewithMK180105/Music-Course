@@ -1,7 +1,13 @@
 import React from 'react'
 import { InfiniteMovingCards } from './ui/infinite-moving-cards';
 
-const musicSchoolTestimonials = [
+interface Testimonials{
+  quote: string,
+  name: string,
+  title: string,
+}
+
+const musicSchoolTestimonials: Testimonials[] = [
     {
       quote:
         'Joining the music school transformed my understanding of music and helped me to truly discover my own sound. The instructors are world-class!',

@@ -2,7 +2,12 @@
 import React from "react";
 import { StickyScroll } from "./ui/sticky-scroll-reveal";
 
-const musicSchoolContent = [
+interface Content {
+  title: string,
+  description: string,
+}
+
+const musicSchoolContent: Content[] = [
     {
       title: 'Discover Your Sound with Us: A Personal Journey in Music Mastery',
       description:

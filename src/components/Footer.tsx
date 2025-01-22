@@ -1,7 +1,19 @@
 import Link from 'next/link'
 import React from 'react'
 
-const footerContent = [
+interface Items {
+  id: string,
+  title: string,
+  description: string
+}
+
+interface Footer {
+  id: string,
+  section: string,
+  items: Items[]
+}
+
+const footerContent: Footer[] = [
     {
       id: "section-1",
       section: "About Us",

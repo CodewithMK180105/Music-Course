@@ -2,7 +2,14 @@ import React from 'react'
 import { WavyBackground } from './ui/wavy-background'
 import { AnimatedTooltip } from './ui/animated-tooltip'
 
-const instructors = [
+interface Instructors {
+  id: number,
+  name: string,
+  designation: string,
+  image: string
+}
+
+const instructors: Instructors[] = [
     {
       id: 1,
       name: 'Elena Briggs',
