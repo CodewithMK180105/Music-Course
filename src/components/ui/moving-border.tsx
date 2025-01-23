@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
 import {
   motion,
   useAnimationFrame,
@@ -7,9 +7,9 @@ import {
   useMotionValue,
   useTransform,
 } from "framer-motion";
-import { useRef } from "react";
 import { cn } from "@/lib/utils";
 
+// Button Component
 export function Button({
   borderRadius = "1.75rem",
   children,
@@ -22,23 +22,22 @@ export function Button({
 }: {
   borderRadius?: string;
   children: React.ReactNode;
-  as?: any;
+  as?: React.ElementType; // Typing the `as` prop as React.ElementType
   containerClassName?: string;
   borderClassName?: string;
   duration?: number;
   className?: string;
-  [key: string]: any;
-}) {
+} & React.ComponentPropsWithRef<React.ElementType>) { // Using `React.ElementType` for `ComponentPropsWithRef`
   return (
     <Component
       className={cn(
-        "bg-transparent relative text-xl  h-16 w-40 p-[1px] overflow-hidden ",
+        "bg-transparent relative text-xl h-16 w-40 p-[1px] overflow-hidden ",
         containerClassName
       )}
       style={{
         borderRadius: borderRadius,
       }}
-      {...otherProps}
+      {...otherProps} // Passing other props to the component
     >
       <div
         className="absolute inset-0"
@@ -69,6 +68,7 @@ export function Button({
   );
 }
 
+// MovingBorder Component
 export const MovingBorder = ({
   children,
   duration = 2000,
@@ -80,13 +80,12 @@ export const MovingBorder = ({
   duration?: number;
   rx?: string;
   ry?: string;
-  [key: string]: any;
-}) => {
-  const pathRef = useRef<any>();
+} & React.SVGProps<SVGSVGElement>) => { // Using `SVGProps<SVGSVGElement>` here for extra SVG props
+  const pathRef = useRef<SVGRectElement | null>(null); // Correct type for the ref
   const progress = useMotionValue<number>(0);
 
   useAnimationFrame((time) => {
-    const length = pathRef.current?.getTotalLength();
+    const length = pathRef.current?.getTotalLength(); // Optional chaining avoids errors
     if (length) {
       const pxPerMillisecond = length / duration;
       progress.set((time * pxPerMillisecond) % length);
@@ -95,11 +94,11 @@ export const MovingBorder = ({
 
   const x = useTransform(
     progress,
-    (val) => pathRef.current?.getPointAtLength(val).x
+    (val) => pathRef.current?.getPointAtLength(val).x || 0
   );
   const y = useTransform(
     progress,
-    (val) => pathRef.current?.getPointAtLength(val).y
+    (val) => pathRef.current?.getPointAtLength(val).y || 0
   );
 
   const transform = useMotionTemplate`translateX(${x}px) translateY(${y}px) translateX(-50%) translateY(-50%)`;
@@ -112,7 +111,7 @@ export const MovingBorder = ({
         className="absolute h-full w-full"
         width="100%"
         height="100%"
-        {...otherProps}
+        {...otherProps} // Now passing the SVG props directly with correct typing
       >
         <rect
           fill="none"
@@ -120,7 +119,7 @@ export const MovingBorder = ({
           height="100%"
           rx={rx}
           ry={ry}
-          ref={pathRef}
+          ref={pathRef} // Attach the ref here
         />
       </svg>
       <motion.div

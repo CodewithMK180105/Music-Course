@@ -16,7 +16,10 @@ export const TextRevealCard = ({
   className?: string;
 }) => {
   const [widthPercentage, setWidthPercentage] = useState(0);
-  const cardRef = useRef<HTMLDivElement | any>(null);
+
+  // Change `cardRef` type to `HTMLDivElement` (no `any` required)
+  const cardRef = useRef<HTMLDivElement>(null);
+
   const [left, setLeft] = useState(0);
   const [localWidth, setLocalWidth] = useState(0);
   const [isMouseOver, setIsMouseOver] = useState(false);
@@ -30,7 +33,8 @@ export const TextRevealCard = ({
     }
   }, []);
 
-  function mouseMoveHandler(event: any) {
+  // Correct type for mouse event
+  function mouseMoveHandler(event: React.MouseEvent<HTMLDivElement>) {
     event.preventDefault();
 
     const { clientX } = event;
@@ -44,9 +48,12 @@ export const TextRevealCard = ({
     setIsMouseOver(false);
     setWidthPercentage(0);
   }
+
   function mouseEnterHandler() {
     setIsMouseOver(true);
   }
+
+  // Correct type for touch event
   function touchMoveHandler(event: React.TouchEvent<HTMLDivElement>) {
     event.preventDefault();
     const clientX = event.touches[0]!.clientX;
@@ -57,6 +64,7 @@ export const TextRevealCard = ({
   }
 
   const rotateDeg = (widthPercentage - 50) * 0.1;
+
   return (
     <div
       onMouseEnter={mouseEnterHandler}
@@ -73,7 +81,7 @@ export const TextRevealCard = ({
     >
       {children}
 
-      <div className="h-40  relative flex items-center overflow-hidden">
+      <div className="h-40 relative flex items-center overflow-hidden">
         <motion.div
           style={{
             width: "100%",
@@ -89,7 +97,7 @@ export const TextRevealCard = ({
                 }
           }
           transition={isMouseOver ? { duration: 0 } : { duration: 0.4 }}
-          className="absolute bg-[#1d1c20] z-20  will-change-transform"
+          className="absolute bg-[#1d1c20] z-20 will-change-transform"
         >
           <p
             style={{
@@ -110,7 +118,7 @@ export const TextRevealCard = ({
           className="h-40 w-[8px] bg-gradient-to-b from-transparent via-neutral-800 to-transparent absolute z-50 will-change-transform"
         ></motion.div>
 
-        <div className=" overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,white,transparent)]">
+        <div className="overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,white,transparent)]">
           <p className="text-base sm:text-[3rem] py-10 font-bold bg-clip-text text-transparent bg-[#323238]">
             {text}
           </p>
