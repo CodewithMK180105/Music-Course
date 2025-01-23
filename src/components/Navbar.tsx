@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { HoveredLink, Menu, MenuItem } from "./ui/navbar-menu";
 import { cn } from "@/utils/cn";
 import Link from "next/link";
+import { ModeToggle } from "./theme-btn";
 
 const Navbar = ({ className }: { className?: string }) => {
   const [active, setActive] = useState<string | null>(null);
@@ -34,7 +35,7 @@ const Navbar = ({ className }: { className?: string }) => {
             item="Contact Us"
           ></MenuItem>
         </Link>
-        {/* <ModeToggle /> */}
+        <ModeToggle />
       </Menu>
     </div>
   );
