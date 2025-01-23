@@ -60,7 +60,7 @@ const footerContent: Footer[] = [
 
 function Footer() {
   return (
-    <footer className='bg-black'>
+    <footer className='bg-slate-100 dark:bg-black'>
         {/*
   Heads up! 👋
 
@@ -105,13 +105,13 @@ function Footer() {
       {
         footerContent.map((content)=>(
             <div className="text-center sm:text-left" key={content.id}>
-        <p className="text-lg font-medium text-white text-center">{content.section}</p>
+        <p className="text-lg font-medium dark:text-white text-center">{content.section}</p>
 
         <ul className="mt-8 space-y-4 text-sm">
           {
             content.items.map((item)=>(
                 <li key={item.id} className='text-center'>
-            <Link className="text-gray-300 transition hover:text-gray-400/75" href="#">
+            <Link className="text-gray-600 dark:text-gray-300 transition hover:text-gray-400/75" href="#">
               {item.title}
             </Link>
           </li>

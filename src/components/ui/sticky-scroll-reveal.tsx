@@ -74,7 +74,7 @@ export const StickyScroll = ({ content, contentClassName }: StickyScrollProps) =
       animate={{
         backgroundColor: backgroundColors[activeCard % backgroundColors.length],
       }}
-      className="h-[30rem] overflow-y-auto flex justify-center relative space-x-10 rounded-md p-10"
+      className="h-[30rem] overflow-y-auto flex justify-center relative space-x-10 p-10"
       ref={ref}
       style={{
         msOverflowStyle: "none", // Hide scrollbar for Internet Explorer 10+

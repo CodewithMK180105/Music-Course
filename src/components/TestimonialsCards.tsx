@@ -42,7 +42,7 @@ const musicSchoolTestimonials: Testimonials[] = [
 
 const MusicSchoolTestimonials = () => {
   return (
-    <div className='h-[40rem] w-full dark:bg-black dark:bg-grid-white/[0.15] relative flex flex-col items-center justify-center overflow-hidden'>
+    <div className='h-[40rem] w-full bg-grid-black/[0.15] dark:bg-black dark:bg-grid-white/[0.15] relative flex flex-col items-center justify-center overflow-hidden'>
       <h2 className='text-3xl font-bold text-center mb-8 z-10'>
         Hear Our Harmony: Voices of Success
       </h2>

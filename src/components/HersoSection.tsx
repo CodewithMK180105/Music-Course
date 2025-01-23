@@ -6,7 +6,7 @@ import { Button } from "./ui/moving-border";
 
 const HersoSection = () => {
   return (
-    <div className="h-screen w-full rounded-md flex flex-col items-center justify-center relative overflow-hidden mx-auto py-10 md:py-0">
+    <div className="bg-slate-100 dark:bg-black h-screen w-full rounded-md flex flex-col items-center justify-center relative overflow-hidden mx-auto py-10 md:py-0">
       <div className="text-neutral-900 dark:text-neutral-50">
         <Spotlight
           className="-top-40 left-0 md:left-60 md:-top-20"

@@ -26,8 +26,8 @@ function page() {
   const typedCourseData: CourseData= courseData
 
   return (
-    <div className="min-h-screen bg-black py-12 pt-36">
-      <h1 className="text-lg md:text-7xl text-center font-sans font-bold mb-8 text-white">
+    <div className="min-h-screen bg-slate-100 dark:bg-black py-12 pt-36">
+      <h1 className="text-lg md:text-7xl text-center font-sans font-bold mb-8 text-gray-600 dark:text-white">
         All Courses ({typedCourseData.courses.length})
       </h1>
       <div className="flex flex-wrap justify-center">
