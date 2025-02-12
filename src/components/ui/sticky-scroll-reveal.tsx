@@ -46,10 +46,17 @@ export const StickyScroll = ({ content, contentClassName }: StickyScrollProps) =
   });
 
   const backgroundColors = [
-    "var(--slate-900)",
-    "var(--black)",
-    "var(--neutral-900)",
+    typeof window !== "undefined" && document.documentElement.classList.contains("dark")
+      ? "var(--slate-900)"
+      : "var(--slate-100)",
+    typeof window !== "undefined" && document.documentElement.classList.contains("dark")
+      ? "var(--black)"
+      : "white",
+    typeof window !== "undefined" && document.documentElement.classList.contains("dark")
+      ? "var(--neutral-900)"
+      : "#e9f5f9",
   ];
+  
 
   // Memoize linearGradients array
   const linearGradients = useMemo(
@@ -92,7 +99,7 @@ export const StickyScroll = ({ content, contentClassName }: StickyScrollProps) =
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
                 }}
-                className="text-2xl font-bold text-slate-100"
+                className="text-2xl font-bold  text-sky-900 dark:text-slate-100"
               >
                 {item.title}
               </motion.h2>
@@ -103,7 +110,7 @@ export const StickyScroll = ({ content, contentClassName }: StickyScrollProps) =
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
                 }}
-                className="text-kg text-slate-300 max-w-sm mt-10"
+                className="text-kg text-700 dark:text-slate-300 max-w-sm mt-10"
               >
                 {item.description}
               </motion.p>

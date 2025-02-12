@@ -43,7 +43,7 @@ const instructors: Instructors[] = [
 const Instructors = () => {
   return (
     <div className='relative h-[40rem] overflow-hidden flex items-center justify-center'>
-      <WavyBackground className='w-full max-w-7xl mx-auto flex flex-col items-center justify-center h-full'>
+      <WavyBackground backgroundFill="#1e293b" className='w-full max-w-7xl mx-auto flex flex-col items-center justify-center h-full'>
         <h2 className='text-center text-2xl md:text-4xl lg:text-7xl text-white font-bold mb-8'>Meet Our Instructors</h2>
         <p className='text-center text-xl text-white'>Discover the  talented professionals who will guide your musical journey</p>
         <div className='flex items-center justify-center mb-10 w-full mt-8'>
